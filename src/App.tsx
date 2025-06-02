@@ -195,19 +195,19 @@ function App() {
       setTimeout(() => setShowSuccess(false), 3000)
 
       // Share API for mobile
-      // if (navigator.share && navigator.canShare) {
-      //   try {
-      //     const file = new File([pdfBlob], 'images.pdf', { type: 'application/pdf' })
-      //     if (navigator.canShare({ files: [file] })) {
-      //       await navigator.share({
-      //         files: [file],
-      //         title: 'Generated PDF'
-      //       })
-      //     }
-      //   } catch (shareError) {
-      //     console.log('Share cancelled')
-      //   }
-      // }
+      if (navigator.share && navigator.canShare) {
+        try {
+          const file = new File([pdfBlob], 'images.pdf', { type: 'application/pdf' })
+          if (navigator.canShare({ files: [file] })) {
+            await navigator.share({
+              files: [file],
+              title: 'Generated PDF'
+            })
+          }
+        } catch (shareError) {
+          console.log('Share cancelled')
+        }
+      }
     } catch (error) {
       console.error('Error generating PDF:', error)
       alert('Error generating PDF. Please try again.')
