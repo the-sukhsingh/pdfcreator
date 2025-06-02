@@ -1,54 +1,101 @@
-# React + TypeScript + Vite
+# 📄 Image to PDF Converter
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, mobile-friendly Progressive Web App (PWA) that allows users to convert multiple images into a single PDF document.
 
-Currently, two official plugins are available:
+## ✨ Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **📱 Mobile-friendly**: Optimized for mobile devices with touch-friendly interface
+- **🔄 PWA Support**: Works offline once installed, can be added to home screen
+- **📷 Multiple Input Methods**: Upload from device, camera, or drag & drop (desktop)
+- **🖼️ Image Preview**: Preview and reorder images before conversion
+- **📄 PDF Generation**: Convert images to a single PDF using jsPDF
+- **💾 Easy Download/Share**: Download PDF or share using native device sharing
+- **⚡ Fast & Lightweight**: Minimal dependencies and optimized performance
+- **🎨 Clean UI**: Modern, minimal design with beautiful animations
 
-## Expanding the ESLint configuration
+## 🚀 Getting Started
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Prerequisites
+- Node.js (v18 or higher)
+- npm or yarn
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+### Installation
+```bash
+# Clone or download the project
+cd pdfcreator
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🛠️ Tech Stack
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- **Frontend**: React 19 + TypeScript
+- **Build Tool**: Vite
+- **PDF Generation**: jsPDF
+- **Styling**: CSS3 with modern features
+- **PWA**: Service Worker + Web App Manifest
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+## 📱 PWA Features
+
+- **Offline Support**: Works without internet after first load
+- **App-like Experience**: Can be installed on mobile devices
+- **Fast Loading**: Cached assets for quick startup
+- **Native Sharing**: Integrates with device sharing capabilities
+
+## 🔧 Usage
+
+1. **Upload Images**: Click the upload area or drag & drop images
+2. **Preview & Reorder**: Review your images and change their order if needed
+3. **Generate PDF**: Click "Generate PDF" to create your document
+4. **Download/Share**: The PDF will download automatically, or use the share button on mobile
+
+## 📂 Project Structure
+
 ```
+pdfcreator/
+├── public/
+│   ├── manifest.json      # PWA manifest
+│   ├── sw.js             # Service worker
+│   └── icons/            # App icons
+├── src/
+│   ├── App.tsx           # Main application component
+│   ├── App.css           # Styles
+│   └── main.tsx          # Entry point
+└── package.json
+```
+
+## 🎨 Customization
+
+The app is designed to be easily customizable:
+
+- **Colors**: Modify the CSS variables in `App.css`
+- **Layout**: Adjust grid layouts and spacing
+- **Features**: Add new image processing features
+- **PDF Options**: Customize PDF generation settings
+
+## 📄 License
+
+This project is open source and available under the MIT License.
+
+## 🤝 Contributing
+
+Contributions are welcome! Feel free to:
+
+- Report bugs
+- Suggest new features
+- Submit pull requests
+- Improve documentation
+
+---
+
+Built with ❤️ using React and modern web technologies.
