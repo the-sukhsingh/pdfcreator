@@ -45,7 +45,7 @@ function App() {
       const updated = [...prev, ...newImages]
       // Switch to preview mode when first images are added
       if (prev.length === 0 && updated.length > 0) {
-        setViewMode('preview')
+        setViewMode('grid')
         setCurrentImageIndex(0)
       }
       return updated
@@ -382,8 +382,8 @@ function App() {
                             onClick={() => reorderImages(index, index - 1)}
                             aria-label="Move up"
                           >
-                            ↑
-                          </button>
+                            <img src="https://cdn-icons-png.flaticon.com/512/9678/9678508.png " width="16" height="16" alt="" title="" className="img-small invert upsideDown"  />
+                            </button>
                         )}
                         {index < images.length - 1 && (
                           <button
@@ -391,7 +391,7 @@ function App() {
                             onClick={() => reorderImages(index, index + 1)}
                             aria-label="Move down"
                           >
-                            ↓
+                            <img src="https://cdn-icons-png.flaticon.com/512/9678/9678508.png " width="16" height="16" alt="" title="" className="img-small invert" />
                           </button>
                         )}
                       </div>
@@ -462,11 +462,14 @@ function App() {
                         onDragStart={(e) => handleFilmStripDragStart(e, index)}
                         onDragEnd={handleFilmStripDragEnd}
                         onDragOver={(e) => handleFilmStripDragOver(e, index)}
+                        
                       >
                         <img 
                           src={image.preview} 
                           alt={`Thumbnail ${index + 1}`}
                           className="film-strip-image"
+                          draggable="false"
+                          
                         />
                         <div className="film-strip-number">{index + 1}</div>
                       </div>
